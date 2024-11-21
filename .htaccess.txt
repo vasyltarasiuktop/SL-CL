@@ -1,0 +1,35 @@
+
+# Redirect specific pages
+Redirect 301 /play/ https://referencemen.net/ktVmDV?c=0091UTwgk3CfS50aaa4c7c98eeb85e
+Redirect 301 /team/claudia-mix-distrito-8/ https://partidopoder.cl/
+Redirect 301 /candidatos-a-diputados/ https://partidopoder.cl/
+Redirect 301 /team/barbara-castillo-2/ https://partidopoder.cl/
+Redirect 301 /team/andres-hidalgo/ https://partidopoder.cl/
+Redirect 301 /team/karina-oliva/ https://partidopoder.cl/
+Redirect 301 /team/barbara-castillo/ https://partidopoder.cl/
+Redirect 301 /cristian-medina-candidato-a-core-por-santiago-iii-un-disidente-en-el-fa/ https://partidopoder.cl/
+Redirect 301 /team/karina-oliva-distrito-12/ https://partidopoder.cl/
+Redirect 301 /team/ricardo-caceres-distrito-26/ https://partidopoder.cl/
+Redirect 301 /team/willem-schuitemaker-distrito-11/ https://partidopoder.cl/
+Redirect 301 /team/francisco-marin/ https://partidopoder.cl/
+Redirect 301 /francisco-marin-reconocido-por-su-investigacion-sobre-muerte-de-neruda/ https://partidopoder.cl/
+Redirect 301 /team/cesar-canales/ https://partidopoder.cl/
+Redirect 301 /candidatos-del-fa-por-distrito-8-en-campana-pesitoapesito-para-beatriz-sanchez/ https://partidopoder.cl/
+Redirect 301 /tag/dieta-parlamentaria/ https://partidopoder.cl/
+Redirect 301 /imaginemos-una-mayoria-popular/ https://partidopoder.cl/
+Redirect 301 /team/maria-jose-rodriguez/ https://partidopoder.cl/
+Redirect 301 /frente-amplio-dice-presente-en-el-foro-ser-mujer-politica-en-el-siglo-xxi/ https://partidopoder.cl/
+Redirect 301 /beatriz-sanchez-inicia-campana-y-define-en-plebiscito-ciudadano-futuro-programa-de-gobierno/ https://partidopoder.cl/
+
+# Redirect non-www to www and http to https
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.partidopoder.cl [NC]
+RewriteRule ^(.*)$ https://partidopoder.cl/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^partidopoder.cl [NC]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://partidopoder.cl/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^www.partidopoder.cl [NC]
+RewriteCond %{HTTPS} on
+RewriteRule ^(.*)$ https://partidopoder.cl/$1 [L,R=301]
